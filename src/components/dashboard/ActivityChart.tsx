@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
 const data = [
   { name: "Jan", value: 10 },
@@ -17,12 +17,31 @@ const data = [
 
 export function ActivityChart() {
   return (
-    <ResponsiveContainer width="100%" height={200}>
-      <BarChart data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey="value" fill="#6366f1" radius={[4, 4, 0, 0]} />
+    <ResponsiveContainer width="100%" height={220}>
+      <BarChart
+        data={data}
+        margin={{ top: 20, right: 10, left: 10, bottom: 10 }}
+        barCategoryGap={20} // spacing between bars
+      >
+        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+        <XAxis
+          dataKey="name"
+          axisLine={false}
+          tickLine={false}
+          stroke="#6b7280"
+        />
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+          stroke="#6b7280"
+        />
+        <Tooltip cursor={{ fill: "rgba(0,0,0,0.05)" }} />
+        <Bar
+          dataKey="value"
+          fill="#6366f1"
+          radius={[12, 12, 12, 12]} // rounded pill-like bars
+          barSize={24} // bar thickness
+        />
       </BarChart>
     </ResponsiveContainer>
   );

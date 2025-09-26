@@ -14,7 +14,7 @@ function PieChartData({
           </div>
 
           {/* Progress bar */}
-          <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+          <div className="w-full h-2 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full"
               style={{

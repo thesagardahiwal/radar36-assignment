@@ -30,6 +30,7 @@ export default function PieChartCard({
                                 innerRadius={50}
                                 outerRadius={80}
                                 paddingAngle={3}
+                                cornerRadius={5} 
                             >
                                 {data.map((entry, i) => (
                                     <Cell key={i} fill={entry.color} />

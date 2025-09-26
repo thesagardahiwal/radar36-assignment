@@ -10,9 +10,9 @@ interface Props {
 
 export default function OverviewCard({ title, value, icon, change }: Props) {
   return (
-    <Card className="flex bg-[#E9F4FF] relative items-center gap-2 p-4">
+    <Card className="flex bg-[#E9F4FF] relative items-center gap-4 p-4">
       <div className="p-2 h-10 w-10 rounded-md bg-black/5 flex items-center justify-center">{icon}</div>
-      <div className="mt-3">
+      <div className="">
         <span className="text-sm text-gray-500">{title}</span>
         <p className="text-2xl mt-2 font-semibold">{value}</p>
       </div>

@@ -22,9 +22,17 @@ export const activityChartData = [
   { month: "Dec", value: 20 },
 ];
 
+// export const pieChartData = [
+//   { name: "Critical", value: 52.1 },
+//   { name: "High", value: 22.8 },
+//   { name: "Medium", value: 13.9 },
+//   { name: "Low", value: 11.2 },
+// ];
+
+
 export const pieChartData = [
-  { name: "Critical", value: 52.1 },
-  { name: "High", value: 22.8 },
-  { name: "Medium", value: 13.9 },
-  { name: "Low", value: 11.2 },
+    { name: "Critical", value: 52.1, color: "#ef4444" },
+    { name: "High", value: 22.8, color: "#f97316" },
+    { name: "Medium", value: 13.9, color: "#facc15" },
+    { name: "Info", value: 11.2, color: "#3b82f6" },
 ];

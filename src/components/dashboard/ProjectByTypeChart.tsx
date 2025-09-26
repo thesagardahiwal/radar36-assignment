@@ -8,23 +8,22 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Cell,
 } from "recharts";
 
 const data = [
-  { month: "Jan", Web: 5, Mobile: 3, Design: 2, Other: 1 },
-  { month: "Feb", Web: 6, Mobile: 4, Design: 3, Other: 2 },
-  { month: "Mar", Web: 7, Mobile: 5, Design: 3, Other: 1 },
-  { month: "Apr", Web: 4, Mobile: 2, Design: 1, Other: 0 },
-  { month: "May", Web: 8, Mobile: 6, Design: 4, Other: 2 },
-  { month: "Jun", Web: 6, Mobile: 4, Design: 2, Other: 1 },
+  { device: "Web", count: 8 },
+  { device: "Mobile", count: 6 },
+  { device: "Design", count: 3 },
+  { device: "Other", count: 1 },
 ];
 
-const COLORS = {
-  Web: "#3b82f6",     // blue
-  Mobile: "#10b981",  // green
-  Design: "#f59e0b",  // amber
-  Other: "#ef4444",   // red
-};
+const COLORS = [
+  "#3b82f6",     // blue
+  "#10b981",  // green
+  "#f59e0b",  // amber
+  "#ef4444",   // red
+];
 
 export default function ProjectByTypeChart() {
   return (
@@ -41,14 +40,15 @@ export default function ProjectByTypeChart() {
         <ResponsiveContainer>
           <BarChart data={data} barGap={4}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis dataKey="month" stroke="#6b7280" />
+            <XAxis dataKey="device" stroke="#6b7280" />
             <YAxis stroke="#6b7280" />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Web" stackId="a" fill={COLORS.Web} />
-            <Bar dataKey="Mobile" stackId="a" fill={COLORS.Mobile} />
-            <Bar dataKey="Design" stackId="a" fill={COLORS.Design} />
-            <Bar dataKey="Other" stackId="a" fill={COLORS.Other} />
+                <Bar dataKey="count" stackId="a">
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
